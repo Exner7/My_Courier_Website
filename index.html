@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Krona+One&family=Lobster&family=Raleway+Dots&family=Righteous&display=swap" rel="stylesheet"> 
+
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js" defer></script>
+
+        <style>
+
+            #main-header {
+
+                height: 100px;
+
+                border-top: solid goldenrod;
+
+                display: grid;
+
+                text-align: center;
+
+                background-color: black;
+            }
+
+            #main-header h1 {
+                
+                font-family: 'Righteous', cursive;
+
+                color: goldenrod;
+            }
+
+            #main-header p {
+
+                font-family: 'Righteous', cursive;
+                font-style: italic;
+
+                color: snow;
+            }
+
+            
+
+            /* mobile and tablet view */
+
+            @media (max-width: 992px) {
+
+                main {
+                    display: grid;
+                    
+                }
+
+                /* DONE */
+
+                /* main-header section styles */
+
+                #main-header {
+                    height: 4rem;
+                    justify-items: center;
+                    align-items: end;
+                }
+
+                #main-header h1 {
+                    font-size: 1.5rem;
+                    padding: 0;
+                    margin: 0;
+                }
+
+                #main-header p {
+                    font-size: 0.75rem;
+                }
+
+                /* CURRENT DEVELOPMENT */
+
+                /* services section styles */
+
+                #services-container {
+
+                    height: 100%;
+                    width: 100%;
+
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    justify-items: center;
+                    align-items: center;
+                }
+
+                .service {
+
+                    height: 90%;
+                    width: 85%;
+
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    align-content: center;
+
+                    margin: 0;
+                    padding: 0;
+                    
+                    border: solid 3px goldenrod;
+
+                    background-color: black;
+
+                    color: snow;
+                    text-align: center;
+                }
+
+                .service h4 {
+                    border: solid 2px cyan;
+
+                    margin-top: 0;
+
+                    font-family: 'Righteous', cursive;
+
+                    color: goldenrod;
+                }
+
+                .service-logo {
+                    border: solid 2px cyan;
+
+                    width: 50%;
+                    height: auto;
+
+                    padding: 0.25rem;
+                    margin: 0 auto;
+                }
+
+                .service p {
+                    font-family: 'Righteous', cursive;
+                    font-size: 0.8rem;
+                    font-style: italic;
+                }
+
+                /* pricing-table styles */
+
+                #pricing-container {
+
+                    height: 100%;
+                    width: 100%;
+
+                    margin: auto;
+
+                    text-align: center;
+                    
+                }
+
+                #pricing-container h3 {
+                    
+                    font-family: 'Righteous', cursive;
+
+                    margin: 0;
+                }
+
+                #pricing {
+
+                    margin: auto;
+                    margin-top: 0;
+                }
+
+                #pricing th {
+
+                    margin: 0;
+
+                    font-family: 'Righteous', cursive;
+                    font-weight: bold;
+
+                    background-color: black;
+                    color: goldenrod;
+                }
+
+                #pricing td {
+
+                    margin: 0;
+
+                    font-family: 'Righteous', cursive;
+                    font-weight: bold;
+
+                    background-color: cornflowerblue;
+                    color: snow;
+                }
+            }
+
+            /* desktop view */
+
+            @media (min-width: 992px) {
+
+                #main-header {
+                    height: 7.5rem;
+                    grid-template-columns: 1fr 1fr;
+                    align-items: center;
+                }
+
+                #main-header h1 {
+                    justify-self: end;
+                    margin-right: 0.5rem;
+                    font-size: 2.5rem;
+                }
+
+                #main-header p {
+                    justify-self: start;
+                    margin-left: 0.5rem;
+                    font-size: 1rem;
+                }
+            }
+
+        </style>
+
+    </head>
+
+    <body>
+
+        <header>
+
+            <img id="logo" src="images/logo.svg"></div>
+
+            <nav>
+                <ul id="nav-items-container">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Delivery costs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <button id="nav-button" onclick="toggleNav()">
+                <div id="nav-button-top-bar"></div>
+                <div id="nav-button-bottom-bar"></div>
+            </button>
+
+        </header>
+
+        <main>
+            <section id="main-header">
+                <h1>Hermes</h1>
+
+                <p>Powered by OLYMPUS&copy;</p>
+            </section>
+
+            <section id="services-container">
+                <div class="service">
+                    <h4>Standard</h4>
+                    <img class="service-logo" src="images/hermes(3).png" alt="">
+                    <p>A Hermes' horseman will deliver your parcel</p>
+                </div>
+                <div class="service">
+                    <h4>Express</h4>
+                    <img class="service-logo" src="images/hermes(1).png" alt="">
+                    <p>Hermes will fly your parcel to destination</p>
+                </div>
+                <div class="service">
+                    <h4>Iron-Man</h4>
+                    <img class="service-logo" src="images/iron-man.png" alt="">
+                    <p>Delivery in dangerous situations</p>
+                </div>
+                <div class="service">
+                    <h4>Rocket</h4>
+                    <img class="service-logo" src="images/rocket.png" alt="">
+                    <p>Interplanetary delivery</p>
+                </div>
+            </section>
+
+            <section id="pricing-container">
+                <h3>Pricing Table</h3>
+                <table id="pricing">
+                    <tr>
+                        <th>
+                            Standard
+                        </th>
+                        <th>
+                            Express
+                        </th>
+                        <th>
+                            Iron-Man
+                        </th>
+                        <th>
+                            Rocket
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            &#128016;
+                            &#128016;
+                            &#128016;
+                            &#128016;
+                            &#128016;
+                        </td>
+                        <td>
+                            &#128022;
+                            &#128022;
+                            &#128022;
+                        </td>
+                        <td>
+                            
+                            <code>&dollar;120,000</code>
+                        </td>
+                        <td>
+                            <code>&dollar;50,000,000</code>
+                        </td>
+                    </tr>
+                </table>
+            </section>
+        </main>
+
+        <footer>
+
+            <h2 id="ds-unipi">
+                <code>DS-UNIPI</code>
+            </h2>
+
+            <h3 id="web-and-mobile">
+                <code>Web and Mobile Information Systems - 2021</code>
+            </h3>
+
+            <p id="credits">
+                Icons made by
+                <a target="_blank" href="https://www.freepik.com" title="Freepik">
+                    Freepik
+                </a>
+                from
+                <a target="_blank" href="https://www.flaticon.com/" title="Flaticon">
+                    www.flaticon.com
+                </a>
+            </p>
+        </footer>
+
+    </body>
+</html>

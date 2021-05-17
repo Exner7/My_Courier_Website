@@ -18,10 +18,97 @@
         <script src="script.js" defer></script>
 
         <style>
-            video {
-                width: 480px;
-                height: auto;
+
+            main {
+                display: grid;
+                justify-items: center;
+                align-items: center;
+
+                background-color: black;
+                font-family: 'Righteous', cursive;
             }
+
+            /* video styles */
+
+            video {
+                width: 100%;
+                margin: auto;
+            }
+
+            video:hover {
+                cursor: pointer;
+            }
+            /* description styles */
+
+            #description {
+                width: 90%;
+
+                border-top: solid goldenrod;
+                border-bottom: solid goldenrod;
+                
+                padding: 5%;
+                text-align: justify;
+
+                color: snow;
+            }
+
+            #description h1 {
+                color: goldenrod;
+                border-bottom: cyan solid;
+            }
+
+            #description a {
+                font-family: 'Krona one';
+                font-size: 0.8rem;
+                text-decoration: none;
+                color: cornflowerblue;
+            }
+
+            #description a:hover {
+                color: dodgerblue;
+                text-decoration: underline;
+            }
+
+            #description a:active {
+                color: deepskyblue;
+            }
+
+            /* mobile and tablet view */
+
+            @media (max-width: 992px) {
+
+                main {
+                    grid-template-columns: repeat(1, 1fr);
+                }
+            }
+
+            /* desktop view */
+
+            @media (min-width: 992px) {
+
+                main {
+                    grid-template-columns: repeat(2, 1fr);
+                    background-color: rgba(0, 0, 0, 0.65);
+                }
+
+                #video-container {
+                    display: flex;
+                    justify-items: center;
+                }
+
+                video {
+                    width: 95%;
+
+                    border-radius: 20px;
+                }
+
+                /* description styles */
+
+                #description {
+                    border-left: solid goldenrod;
+                }
+            }
+
         </style>
     
     </head>
@@ -31,19 +118,35 @@
         <script src="header.js"></script>
 
         <main>
-            <p>
-                We provide god tire delivery and the GOAT of delivery god Hermes
-                himself to get your parcels to their destination in no time. Our
-                company has collaborated with the best in the busines of fast
-                and secure travel including Tony Stark with his Iron-Man product
-                line and Elon Musk with Space-X. With our help you can be
-                absolutelly sure that your items will reach their destination in
-                the shortest time even in the most hostile enviroments even in
-                space!
-            </p>
-            <video controls autoplay muted>
-                <source src="images/about.mp4" type="video/mp4">
-            </video>
+
+            <div id="video-container">
+                <video controls autoplay muted loop>
+                    <source src="images/about.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <div id="description">
+                <h1>God Tier Delivery</h1>
+                <p>
+                    We provide god tier delivery and the GOAT of delivery god Hermes
+                    himself to get your parcels to their destination in no time. Our
+                    company has collaborated with the best in the busines of fast
+                    and secure travel including Tony Stark with his
+                    <a href="#" target="_blank">
+                        Iron-Man&copy;
+                    </a>
+                    product
+                    line and Elon Musk with
+                    <a href="https://www.spacex.com/" target="_blank">
+                        Space-X&copy;
+                    </a>.
+                    With our help you can be
+                    absolutelly sure that your items will reach their destination in
+                    the shortest time even in the most hostile enviroments even in
+                    space!
+                </p>
+            </div>
+
         </main>
 
         <script src="footer.js"></script>

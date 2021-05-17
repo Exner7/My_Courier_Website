@@ -9,6 +9,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
 
+        <link rel="icon" href="images/favicon.png">
+
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Krona+One&family=Lobster&family=Raleway+Dots&family=Righteous&display=swap" rel="stylesheet"> 
 
@@ -17,8 +19,14 @@
 
         <style>
 
-            #main-header {
+            main {
+                display: grid;
+                background: linear-gradient(black, cornflowerblue, dodgerblue);
+            }
 
+            /* main-header section styles */
+
+            #main-header {
                 height: 100px;
 
                 border-top: solid goldenrod;
@@ -31,7 +39,6 @@
             }
 
             #main-header h1 {
-                
                 font-family: 'Righteous', cursive;
 
                 color: goldenrod;
@@ -45,18 +52,76 @@
                 color: snow;
             }
 
-            
+            /* services section styles */
 
+            #services-container {
+                height: 100%;
+                width: 100%;
+
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                justify-items: center;
+                align-items: center;
+            }
+
+            .service {
+                border: solid 3px goldenrod;
+                border-radius: 15px;
+
+                display: grid;
+               
+                background-color: black;
+                color: snow;
+
+                text-align: center;
+            }
+
+            .service h4 {
+                font-family: 'Righteous', cursive;
+                color: goldenrod;
+            }
+
+            .service-logo {
+                margin: auto;
+            }
+
+            .service p {
+                font-family: 'Righteous', cursive;
+                font-style: italic;
+            }
+
+            /* pricing-table styles */
+
+            #pricing-container {
+                margin: auto;
+            }
+            #pricing {
+                text-align: center;
+            }
+
+            #pricing th {
+                border: solid black;
+
+                background-color: black;
+                color: goldenrod;
+
+                font-family: 'Righteous', cursive;
+                font-weight: bold;
+            }
+
+            #pricing td {
+                border: solid black;
+
+                background-color: cornflowerblue;
+                color: snow;
+
+                font-family: 'Righteous', cursive;
+                font-weight: bold;
+            }
+            
             /* mobile and tablet view */
 
             @media (max-width: 992px) {
-
-                main {
-                    display: grid;
-                    
-                }
-
-                /* DONE */
 
                 /* main-header section styles */
 
@@ -76,120 +141,38 @@
                     font-size: 0.75rem;
                 }
 
-                /* CURRENT DEVELOPMENT */
-
                 /* services section styles */
 
                 #services-container {
-
-                    height: 100%;
-                    width: 100%;
-
-                    display: grid;
-                    grid-template-columns: 1fr 1fr;
-                    justify-items: center;
-                    align-items: center;
+                    grid-template-columns: repeat(2, 1fr);
                 }
 
                 .service {
-
                     height: 90%;
-                    width: 85%;
+                    width: 90%;
 
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: space-between;
-                    align-content: center;
-
-                    margin: 0;
-                    padding: 0;
-                    
-                    border: solid 3px goldenrod;
-
-                    background-color: black;
-
-                    color: snow;
-                    text-align: center;
+                    grid-template-rows: 1fr 90px 1fr;
                 }
 
                 .service h4 {
-                    border: solid 2px cyan;
-
-                    margin-top: 0;
-
-                    font-family: 'Righteous', cursive;
-
-                    color: goldenrod;
+                    font-size: 1rem;
                 }
 
                 .service-logo {
-                    border: solid 2px cyan;
-
-                    width: 50%;
+                    width: 90px;
                     height: auto;
-
-                    padding: 0.25rem;
-                    margin: 0 auto;
                 }
 
                 .service p {
-                    font-family: 'Righteous', cursive;
                     font-size: 0.8rem;
-                    font-style: italic;
-                }
-
-                /* pricing-table styles */
-
-                #pricing-container {
-
-                    height: 100%;
-                    width: 100%;
-
-                    margin: auto;
-
-                    text-align: center;
-                    
-                }
-
-                #pricing-container h3 {
-                    
-                    font-family: 'Righteous', cursive;
-
-                    margin: 0;
-                }
-
-                #pricing {
-
-                    margin: auto;
-                    margin-top: 0;
-                }
-
-                #pricing th {
-
-                    margin: 0;
-
-                    font-family: 'Righteous', cursive;
-                    font-weight: bold;
-
-                    background-color: black;
-                    color: goldenrod;
-                }
-
-                #pricing td {
-
-                    margin: 0;
-
-                    font-family: 'Righteous', cursive;
-                    font-weight: bold;
-
-                    background-color: cornflowerblue;
-                    color: snow;
                 }
             }
 
             /* desktop view */
 
             @media (min-width: 992px) {
+
+                /* main-header section styles */
 
                 #main-header {
                     height: 7.5rem;
@@ -207,6 +190,51 @@
                     justify-self: start;
                     margin-left: 0.5rem;
                     font-size: 1rem;
+                }
+
+                /* services section styles */
+
+                #services-container {
+                    grid-template-columns: repeat(4, 1fr);
+                }
+
+                .service {
+                    height: 80%;
+                    width: 80%;
+
+                    grid-template-rows: 1fr 125px 1.5fr;
+                }
+
+                .service h4 {
+                    font-size: 1.4rem;
+                }
+
+                .service-logo {
+                    width: 120px;
+                    height: auto;
+                }
+
+                .service p {
+                    font-size: 1rem;
+                }
+
+                /* pricing-table styles */
+
+                #pricing th {
+                    padding: 0.5rem 1.5rem;
+
+                    border-radius: 10px;
+
+                    font-size: 1.5rem;
+                }
+
+                #pricing td {
+                    padding: 0.2rem 1rem;
+                    
+                    border-radius: 10px;
+                    border-width: 4px;
+
+                    font-size: 1.25rem;
                 }
             }
 
@@ -257,12 +285,12 @@
             <section id="services-container">
                 <div class="service">
                     <h4>Standard</h4>
-                    <img class="service-logo" src="images/hermes(3).png" alt="">
+                    <img class="service-logo" src="images/standard.png" alt="">
                     <p>A Hermes' horseman will deliver your parcel</p>
                 </div>
                 <div class="service">
                     <h4>Express</h4>
-                    <img class="service-logo" src="images/hermes(1).png" alt="">
+                    <img class="service-logo" src="images/express.png" alt="">
                     <p>Hermes will fly your parcel to destination</p>
                 </div>
                 <div class="service">
@@ -278,7 +306,6 @@
             </section>
 
             <section id="pricing-container">
-                <h3>Pricing Table</h3>
                 <table id="pricing">
                     <tr>
                         <th>

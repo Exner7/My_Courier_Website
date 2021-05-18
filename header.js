@@ -13,7 +13,7 @@ document.write(
                         <a class="nav-link" href="about.html">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Delivery costs</a>
+                        <a class="nav-link" href="delivery-costs.html">Delivery costs</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Blog</a>

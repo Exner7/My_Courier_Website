@@ -104,11 +104,11 @@ footer {
         bottom: 100%; /* nav hidden */
 
         border-bottom: solid 2.5px goldenrod;
-        background-image: url(./images/nav-bg.jpg);
+        background-image: url("images/nav-bg.jpg");
         background-size: cover;
         
         animation-name: none; /* assigned in script.js */
-        animation-duration: 1.2s;
+        animation-duration: 1s;
         animation-fill-mode: forwards;
 
         z-index: 1;

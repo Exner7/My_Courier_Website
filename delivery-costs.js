@@ -73,18 +73,19 @@ form.addEventListener("submit", function(event) {
 
 
 
-    console.log(totalCost); // TO DELETE
-
-
-
     const output = document.querySelector("#output-container");
 
     output.innerHTML =
         `
             <p id="output">
                 The costs for your delivery are
-                <span id="cost">${totalCost}&euro;</span>
+                <span id="cost">${totalCost.toFixed(2)}&euro;</span>
             </p>
         `;
 
+    const outputContainer = document.querySelector("#output-container");
+    outputContainer.style.width = "85%";
+    outputContainer.style.padding = "2.5%";
+
+    alert(`The costs for your delivery are ${totalCost.toFixed(2)}€`);
 });

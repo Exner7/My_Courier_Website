@@ -17,7 +17,180 @@
         <link rel="stylesheet" href="style.css">
         <script src="script.js" defer></script>
 
-        <style></style>
+        <style>
+
+            main {
+                display: grid;
+                justify-items: center;
+
+                font-family: 'Righteous', sans-serif;
+
+                background: linear-gradient(rgba(0, 0, 0, 0.8), black, black, black, rgba(0, 0, 0, 0.8));
+                
+                background-size: cover;
+                background-position: center;
+                color: snow;
+
+                padding: 0.5rem 0;
+            }
+
+            /* desktop view */
+
+            @media (min-width: 992px) {
+
+                main {
+
+                    grid-template-columns: 1fr 2fr;
+                    grid-template-rows: 1fr 1fr 1fr;
+
+                    font-size: 1.25rem;
+
+                    padding: 5%;
+                }
+
+                form {
+                    grid-row: 1 / 4;
+                    grid-column: 1 / 2;
+                }
+
+                input {
+                    width: 50%;
+                }
+
+                #message {
+                    height: 100%;
+                }
+
+                iframe {
+                    grid-row: 2 / 4;
+                    grid-column: 2 / 3;
+                }
+            }
+
+
+
+            /* contact-form */
+
+            form {
+                
+                width: 85%;
+
+                padding: 10px;
+                border: solid goldenrod 3px;
+
+                margin: 10px;
+
+                display: grid;
+
+                row-gap: 8px;
+
+                background-color: white;
+                color: black
+            }
+
+            .text-input {
+
+                width: 95%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                margin: auto;
+
+            }
+
+            .text-input label {
+                border-bottom: solid black 2px;
+                border-left: solid black 4px;
+                padding: 0 1rem 0 0.25rem;
+            }
+
+            .textarea-input {
+
+                width: 100%;
+
+                margin-top: 1rem;
+
+                display: flex;
+                flex-direction: column;
+
+                align-items: center;
+            }
+
+            .textarea-input label {
+                border-bottom: solid black 2px;
+                margin-bottom: 4px;
+                padding: 0 1rem;
+            }
+
+            #message {
+                width: 95%;
+            }
+
+
+
+            /* Contact Info */
+
+            #contact-info {
+                
+                height: max-content;
+                width: max-content;
+                margin: auto;
+
+
+                align-self: center;
+
+                font-style: italic;
+            }
+
+            #contact-info p {
+
+                padding: 0;
+                margin: 0;
+
+            }
+
+            #contact-info-container {
+                
+                border-top: solid 4px goldenrod;
+                border-bottom: solid 4px goldenrod;
+                height: max-content;
+                width: 85%;
+
+                align-self: center;
+                padding: 0.25rem 0;
+            }
+
+            #contact-info a {
+                text-decoration: none;
+                color: cornflowerblue;
+            }
+
+            #contact-info a:hover {
+                color: dodgerblue;
+                text-decoration: underline;
+            }
+
+            #contact-info a:active {
+                color: deepskyblue;
+            }
+
+
+            /* Iframe Map */
+            
+            iframe {
+                
+                width: 90%;
+                height: 90%;
+                
+                border: solid black;
+
+                display: block;
+                margin: auto;
+
+            }
+
+        </style>
 
     </head>
 
@@ -25,7 +198,57 @@
 
         <script src="header.js"></script>
 
-        <main></main>
+        <main>
+        
+            
+
+            <form>
+                
+                <div class="text-input">
+                    <label for="name">Name: </label>
+                    <input type="text" name="name" id="name">
+                </div>
+                
+                <div class="text-input">
+                    <label for="email">Email: </label>
+                    <input type="email" name="email" id="email">
+                </div>
+                
+                <div class="text-input">
+                    <label for="topic">Topic: </label>
+                    <input type="text" name="topic" id="topic">
+                </div>
+                
+                <div class="textarea-input">
+                    <label for="message">Message</label>
+                    <textarea name="message" id="message" cols="32" rows="8" placeholder=" Write your message here ..."></textarea>
+                </div>
+                
+            </form>
+
+            <div id="contact-info-container">
+
+                <div id="contact-info">
+
+                    <p>Address: Mount Olympus</p>
+                    <p>Phone: <a href="#">212-121-2120</a></p>
+                    <p>Email: <a href="#">hermes@olympus.gr</a></p>
+
+                </div>
+            </div>
+
+
+
+            <iframe
+                    scrolling="no"
+                    allowfullscreen
+                    src="https://maps.google.com/maps?q=Mount%20Olympus&t=&z=11&ie=UTF8&iwloc=&output=embed"
+                    >
+            </iframe>
+
+
+
+        </main>
 
         <script src="footer.js"></script>
         

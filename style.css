@@ -84,7 +84,7 @@ footer {
 
 /* mobile and tablet view */
 
-@media (max-width: 992px) {
+@media (max-width: 991px) {
 
     body {
         grid-template-rows: 75px auto 125px;

@@ -127,6 +127,44 @@
                 width: 95%;
             }
 
+            #submit-container {
+                width: max-content;
+                align-self: center;
+                margin: auto;
+            }
+
+            #submit {
+
+                width: max-content;
+
+                padding: 0.25rem 0.5rem;
+
+                border: solid goldenrod;
+                border-radius: 8px;
+
+                font-weight: bold;
+                letter-spacing: 0rem;
+
+
+                box-shadow: 0 0.25rem 0.5rem black;
+
+                background-color: black;
+                color: gold;
+
+                font-size: 1rem;
+            }
+
+            #submit:hover {
+                cursor: pointer;
+                background-color: rgba(0, 0, 0, 0.8);
+                box-shadow: 0 0.25rem 0.5rem rgba(255, 217, 0, 0.8);
+            }
+
+            #submit:active {
+                cursor: pointer;
+                background-color: rgba(0, 0, 0, 0.7);
+                box-shadow: 0 0.25rem 0.5rem gold;
+            }
 
 
             /* Contact Info */
@@ -192,6 +230,8 @@
 
         </style>
 
+        <script src="contact.js" defer></script>
+
     </head>
 
     <body>
@@ -223,8 +263,14 @@
                     <label for="message">Message</label>
                     <textarea name="message" id="message" cols="32" rows="8" placeholder=" Write your message here ..."></textarea>
                 </div>
+
+                <div id="submit-container" class="input-container">
+                    <input id="submit" type="submit" value="Send">
+                </div>
                 
             </form>
+
+
 
             <div id="contact-info-container">
 

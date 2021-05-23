@@ -1,21 +1,20 @@
-
+// boolean flag isExpanded to keep track of whether an article is expanded or not
 var isExpanded = false;
 
 // get the article buttons and add to each one an event-listener
 
-document.querySelectorAll(".article-btn").forEach( element => {
+document.querySelectorAll(".article-btn").forEach( button => {
 
-    element.addEventListener( "click", event => {
-
-        const article = element.parentElement;
-
+    button.addEventListener( "click", event => {
+        // get the parent article of the button
+        const article = button.parentElement;
+        // get the unique id number of the article
         const articleNumber = article.id[article.id.length - 1];
 
         // get the device screen width
         const width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
 
-        console.log(typeof width + ":" + width)
-
+        // determine trasformation values
         switch (articleNumber) {
             case "1":
                 translateYValue = (width < 768) ? "37.5%" : "25%";
@@ -36,18 +35,19 @@ document.querySelectorAll(".article-btn").forEach( element => {
             default: console.log("Something went wrong in the switch statement");
         }
 
+        // set trasformation values
         document.documentElement.style.setProperty("--translateY-value", translateYValue);
         document.documentElement.style.setProperty("--translateX-value", translateXValue);
 
-        const articleContent = document.querySelector(
-                "#article-content-" + articleNumber);
+        // select the appropriate article content (i.e. the "in focus" article's paragraph)
+        const articleContent = document.querySelector("#article-content-" + articleNumber);
         
         if (isExpanded) {
 
             article.style.animationName = "collapse";
             articleContent.style.whiteSpace = "nowrap";
             articleContent.style.overflow = "hidden";
-            element.innerHTML = "expand";
+            button.innerHTML = "expand";
 
             isExpanded = false;
 
@@ -61,7 +61,7 @@ document.querySelectorAll(".article-btn").forEach( element => {
 
             article.style.animationName = "expand";
             articleContent.style.whiteSpace = "normal";
-            element.innerHTML = "collapse";
+            button.innerHTML = "collapse";
 
             isExpanded = true;
 

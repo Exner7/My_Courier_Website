@@ -1,4 +1,4 @@
-
+// get the delivery-costs form from the DOM
 const form = document.querySelector("form");
 
 form.addEventListener("submit", function(event) {
@@ -6,25 +6,25 @@ form.addEventListener("submit", function(event) {
     // prevent redirection
     event.preventDefault();
 
-
+    // get the postcode input value from the DOM
 
     const postcodeStr = document.querySelector("#postcode").value;
 
-    const postcode = parseInt(postcodeStr);
+    const postcode = parseInt(postcodeStr); // convert to integer
 
-
+    // get the weight input value from the DOM
 
     const weightStr = document.querySelector("#weight").value;
 
-    const weight = parseFloat(weightStr);
+    const weight = parseFloat(weightStr); // convert to float
 
+    // define key variables
 
+    let weightRate; // the rate for weight <= 5kg
+    let overweight; // the rate for over 5kg kilograms
+    let commission; // the commission amount
 
-    let weightRate;
-    let overweight;
-    let commission;
-
-
+    // assign variables appropriately (based on postcode)
 
     if (postcode <= 20000) {
 
@@ -56,10 +56,10 @@ form.addEventListener("submit", function(event) {
         overweight = 0.15;
         commission = 2.50;
     
-    } 
+    }
 
 
-
+    // calculate the cost corresponding to the parcel weight
     
     let weightCost;
 
@@ -71,7 +71,7 @@ form.addEventListener("submit", function(event) {
 
     let totalCost = weightCost + commission;
 
-
+    // contruct and output the result to the document
 
     const output = document.querySelector("#output-container");
 
@@ -82,10 +82,10 @@ form.addEventListener("submit", function(event) {
                 <span id="cost">${totalCost.toFixed(2)}&euro;</span>
             </p>
         `;
-
+    // set up the styles for the output
     const outputContainer = document.querySelector("#output-container");
     outputContainer.style.width = "85%";
     outputContainer.style.padding = "2.5%";
-
+    // also alert the result
     alert(`The costs for your delivery are ${totalCost.toFixed(2)}€`);
 });

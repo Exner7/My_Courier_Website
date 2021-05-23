@@ -2,7 +2,7 @@ document.write(
     `
         <header>
 
-            <img id="logo" src="images/logo.svg"></div>
+            <img id="logo" src="sources/images/global/header-logo.svg"></div>
 
             <nav>
                 <ul id="nav-items-container">

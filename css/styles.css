@@ -84,7 +84,7 @@ footer {
 
 /* mobile and tablet view */
 
-@media (max-width: 991px) {
+@media (max-width: 992px) {
 
     body {
         grid-template-rows: 75px auto 125px;
@@ -104,7 +104,7 @@ footer {
         bottom: 100%; /* nav hidden */
 
         border-bottom: solid 2.5px goldenrod;
-        background-image: url("images/nav-bg.jpg");
+        background-image: url("../sources/images/global/nav-bg.jpg");
         background-size: cover;
         
         animation-name: none; /* assigned in script.js */
@@ -292,7 +292,7 @@ footer {
 
 /* desktop view */
 
-@media (min-width: 992px) {
+@media (min-width: 993px) {
 
     body {
         grid-template-rows: 100px auto 150px;
